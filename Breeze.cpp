@@ -47,11 +47,11 @@ void Breeze::equalize (int canal, int nivel) {			//Função de equalização. Re
 	else parte_A = CI2;					//Canais ímpares são tratadas pelo CI-2;
 
 	if (nivel < 0) {					//Valor inferior a 0 indica atenuação
-		parte_C = parte_C | B10001000;			//Insere int 1 na posição 4 indicando atenuação
+		parte_C = parte_C | B10001000;			//Concatena parte_C com byte 1 na posição 4 indicando atenuação usando função 'OU' (|)
 		nivel = abs(nivel);				//Módulo do valor, para não enviar valor negativo
 	}
 
-	parte_C = parte_C | posicao [canal] | nivel;		//Concatena os dados a serem enviados no byte C
+	parte_C = parte_C | posicao [canal] | nivel;		//Concatena os dados a serem enviados no byte C com a função 'OU' (|)
 
 	TDA7317 (parte_A, parte_B, parte_C);			//Chama a função que envia os dados
 
