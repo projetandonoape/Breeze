@@ -51,7 +51,7 @@ void Breeze::equalize (int canal, int nivel) {			//função de equalização. re
 		nivel = abs(nivel);				//módulo do valor, para não enviar valor negativo
 	}
 
-	parte_C = parte_C | posicao [canal] | nivel;		//concatena os dados a serem enviados no byte C com a função 'OU' (|)
+	parte_C = parte_C | posicao [canal] | nivel;		//concatena bits a serem enviados no byte C com a função 'OU' (|)
 
 	TDA7317 (parte_A, parte_B, parte_C);			//chama a função que envia os bytes
 
@@ -69,7 +69,7 @@ void Breeze::volume (int nivel) {				//função volume. recebe o nível do volum
 
 	nivel = abs(nivel);					//módulo do valor, para não enviar valor negativo
 	byte parte_A = B1000010;				//para manter qualidade de áudio apenas o CI-1 controla o volume
-	int parte_B = B00000000 | nivel;			//2ºbyte: VOLUME (0 OR nivel) 
+	int parte_B = B00000000 | nivel;			//2ºbyte: VOLUME (concatena a máscara com os bits do nível usando operador OU (|) 
 	byte parte_C = B00000000; 				//3°byte: CANAL + NIVEL (Não altera nível nesta função)
 	TDA7317 (parte_A, parte_B, parte_C);			//chama a função que envia os bytes
 
