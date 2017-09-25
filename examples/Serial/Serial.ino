@@ -13,6 +13,6 @@ void loop() {
   
 Breeze.equalize(1,7);   //Exemplo de reforço do canal 1 (32Hz) para nível 7 (+6dB)
 Breeze.equalize(6,-7);  //Exemplo de atenuação do canal 1 (32Hz) para nível -7 (-6dB)
-Breeze.volume (-2);    //Exemplo de atenuação do volume para nível -2
+Breeze.volume (-2);     //Exemplo de atenuação do volume para nível -2
 
 }
