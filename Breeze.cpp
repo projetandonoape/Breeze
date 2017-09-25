@@ -59,7 +59,7 @@ void Breeze::equalize (int canal, int nivel) {			//função de equalização. re
 
 void Breeze::reset() {						//função reset
 
-for (byte canal = 1; canal <= 10; canal++) equalize (canal, 0);	//zera todos os canais
+for (byte canal = 1; canal <= 10; canal++) equalize (canal, 0);	//envia nível zero para todos os canais
 TDA7317 (B1000010, B00000000, B00000000);			//zera volume do CI-1
 TDA7317 (B1000011, B00000000, B00000000);			//zera volume do CI-2
 }
