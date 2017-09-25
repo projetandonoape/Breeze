@@ -16,14 +16,14 @@ class Breeze
 {
 
 public:
-	Breeze ();
-	void equalize  (int canal, int nivel) ;
-	void reset ();
-	void volume (int nivel);
-    void TDA7317 (byte parte_A, byte parte_B, byte parte_C);
+	Breeze ();							//função construtor não utilizada
+	void equalize  (int canal, int nivel) ;				//função para atuar nos níveis dos canais
+	void reset ();							//função zerar todos os canais e volume
+	void volume (int nivel);					//função de atuar apenas no volume
+    	void TDA7317 (byte parte_A, byte parte_B, byte parte_C);	//função avançada para enviar bytes ao CircuitoIntegrado
 
 };
 
-extern Breeze Breeze;
+extern Breeze Breeze;							
 
 #endif
