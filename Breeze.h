@@ -20,7 +20,7 @@ public:
 	void equalize  (int canal, int nivel) ;
 	void reset ();
 	void volume (int nivel);
-    void TDA7317 (byte parte_A, byte parte_B, byte parte_C);
+    	void TDA7317 (byte parte_A, byte parte_B, byte parte_C);
 
 };
 
