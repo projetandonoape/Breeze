@@ -7,7 +7,7 @@ Projetado no Apê
 Observação: os números foram tradatos como binários para a observação da posição do bit
 
 ----------------------------------------------------------------------------------
-     FREQ(Hz)	      CANAL 	        CI 	     POSIÇÃO 		ENDEREÇO
+     FREQ(Hz)	      CANAL 	        CI 	     POSIÇÃO 		BITS
 ----------------------------------------------------------------------------------
 	32		1		2		5		B100
 	64		2		1		5		B100
