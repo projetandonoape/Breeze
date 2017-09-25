@@ -25,7 +25,7 @@ Observação: os números foram tradatos como binários para a observação da p
 #include "Wire.h"						//chama a biblioteca de comunicação I2C 
 #include "Breeze.h"						
 
-Breeze::Breeze() 						//função 'Construtor de Objeto' não utilizado pelo Breeze
+Breeze::Breeze() 						//a função 'Construtor de Objeto' não é utilizada pelo Breeze
 {
 }
 
