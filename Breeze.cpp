@@ -31,9 +31,9 @@ Breeze::Breeze() 						//função 'Construtor de Objeto' não utilizado pelo Bre
 
 void Breeze::equalize (int canal, int nivel) {
 
-	byte parte_A = B0000000;				//1°byte: máscara de ENDEREÇO (preenche bits com zeros)
+	byte parte_A = B0000000;				//1°byte: ENDEREÇO (preenche máscara de bits com zeros)
 	byte parte_B = B10000000;				//2°byte: VOLUME (nesta função não altera o volume)
-	int parte_C = B00000000;				//3°byte: máscara de CANAL + NÍVEL (preenche bits com zeros)
+	int parte_C = B00000000;				//3°byte: CANAL + NÍVEL (preenche máscara bits com zeros)
 	int posicao[11] = {0, 					//A posição dos canais é dada pelo fabricante do TDA7317 para manter a distorção harmônica (THD) baixa
 		B11000000, B11000000, 				/*BANDAS 1 e 2: ENDEREÇO n°B100 corresponde ao CANAL n°5 */
 		B10010000, B10010000, 				/*BANDAS 3 e 4: ENDEREÇO n°B001 corresponde ao CANAL n°2 */
