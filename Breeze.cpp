@@ -29,7 +29,7 @@ Breeze::Breeze() 						//função 'Construtor de Objeto' não utilizado pelo Bre
 {
 }
 
-void Breeze::equalize (int canal, int nivel) {
+void Breeze::equalize (int canal, int nivel) {			//Função de equalização. Recebe o n° e nível do canal a ser ajustado
 
 	byte parte_A = B0000000;				//1°byte: ENDEREÇO (preenche máscara de bits com zeros)
 	byte parte_B = B10000000;				//2°byte: VOLUME (nesta função não altera o volume)
@@ -57,7 +57,7 @@ void Breeze::equalize (int canal, int nivel) {
 
 }
 
-void Breeze::reset() {
+void Breeze::reset() {						//Função reset
 
 for (byte canal = 1; canal <= 10; canal++) equalize (canal, 0);	//Zera todos os canais
 TDA7317 (B1000010, B00000000, B00000000);			//Zera volume do CI-1
@@ -65,7 +65,7 @@ TDA7317 (B1000011, B00000000, B00000000);			//Zera volume do CI-2
 }
 
 
-void Breeze::volume (int nivel) {
+void Breeze::volume (int nivel) {				//Função volume. Recebe o nível do volume
 
 	nivel = abs(nivel);					//Módulo do valor, para não enviar valor negativo
 	byte parte_A = B1000010;				//Para manter qualidade de áudio apenas o CI-1 controla o volume
