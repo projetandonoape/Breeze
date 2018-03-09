@@ -5,7 +5,7 @@
 
 void setup() {
   Wire.begin();           //Inicia a Interface I2C
-  Breeze.reset();         //Zera volume e níveis das bandas (Breeze não zera bandas e volume quando energizado)
+  Breeze.reset();         //Zera volume e níveis das bandas
 }
 
 
