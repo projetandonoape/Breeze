@@ -34,7 +34,7 @@ void Breeze::equalize (int banda, int nivel) {			//função de equalização. re
 	byte parte_A = B0000000;				//1°byte: ENDEREÇO (preenche máscara de bits com zeros)
 	byte parte_B = B10000000;				//2°byte: VOLUME (nesta função não altera o volume)
 	int parte_C = B00000000;				//3°byte: BANDA + NÍVEL (preenche máscara bits com zeros)
-	int posicao[11] = {0, 					//a posição dos canais é dada pelo fabricante do TDA7317 para manter a distorção harmônica (THD) baixa
+	int posicao[11] = {0, 					//a posição das bandas é dada pelo fabricante do TDA7317 para manter a distorção harmônica (THD) baixa
 		B11000000, B11000000, 				/*BANDAS 1 e 2: ENDEREÇO n°B100 corresponde ao BANDA n°5 */
 		B10010000, B10010000, 				/*BANDAS 3 e 4: ENDEREÇO n°B001 corresponde ao BANDA n°2 */
 		B10100000, B10100000, 				/*BANDAS 5 e 6: ENDEREÇO n°B010 corresponde ao BANDA n°3 */
@@ -43,8 +43,8 @@ void Breeze::equalize (int banda, int nivel) {			//função de equalização. re
 	const byte CI1 = B1000010;				//endereço do CI-1 0x84(hexa)
 	const byte CI2 = B1000011;				//endereço do CI-2 0x86(hexa)
 
-	if (banda % 2 == 0) parte_A = CI1; 			//canais pares são tratadas pelo CI-1;
-	else parte_A = CI2;					//canais ímpares são tratadas pelo CI-2;
+	if (banda % 2 == 0) parte_A = CI1; 			//bandas pares são tratadas pelo CI-1;
+	else parte_A = CI2;					//bandas ímpares são tratadas pelo CI-2;
 
 	if (nivel < 0) {					//valor inferior a 0 indica atenuação
 		parte_C = parte_C | B10001000;			//concatena parte_C com byte 1 na posição 4 indicando atenuação usando função 'OU' (|)
@@ -59,7 +59,7 @@ void Breeze::equalize (int banda, int nivel) {			//função de equalização. re
 
 void Breeze::reset() {						//função reset: zera todos os níveis e volumes
 
-for (byte banda = 1; banda <= 10; banda++) equalize (banda, 0);	//envia nível zero para todos os canais
+for (byte banda = 1; banda <= 10; banda++) equalize (banda, 0);	//envia nível zero para todas as bandas
 TDA7317 (B1000010, B00000000, B00000000);			//zera volume do CI-1
 TDA7317 (B1000011, B00000000, B00000000);			//zera volume do CI-2
 }
