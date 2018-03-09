@@ -5,7 +5,7 @@ Breeze.cpp
 Autor: Eng. Christian Caldas
 Projetado no Apê
 Observação: no código os números foram tradatos como binários para 
-facilitar na observação da posição do bit
+facilitar a observação da posição do bit
 
 ----------------------------------------------------------------------------------
      FREQ(Hz)	      BANDA 	        CI 	     POSIÇÃO 		BITS
