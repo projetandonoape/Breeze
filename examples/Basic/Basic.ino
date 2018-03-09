@@ -17,7 +17,7 @@ FREQ(Hz)  BANDA
  16K	   10
   
 ---------------------------
-NÍVEL  GANHO/ATENUAÇÃO(dB) 	 
+NÍVEL  GANHO/ATENUAÇÃO(dB) (BANDAS)
 ---------------------------
   7          6,0
   6          5,2
