@@ -12,16 +12,14 @@ Projetando no Apê
 
 #include "Arduino.h"
 
-class Breeze
-{
+class Breeze {
 
 public:
-	Breeze ();							//função construtor não utilizada
-	void equalize  (int banda, int nivel) ;				//função para atuar nos níveis das bandas
-	void reset ();							//função zerar todas as bandas e volume
-	void volume (int nivel);					//função de atuar apenas no volume
-    	void TDA7317 (byte parte_A, byte parte_B, byte parte_C);	//função avançada para enviar bytes ao CircuitoIntegrado
-
+	Breeze ();												//função construtor não utilizada
+	void equalize  (uint8_t banda, int8_t nivel_banda) ;	//função para atuar nos níveis das bandas
+	void reset ();											//função zerar todas as bandas e volume
+	void volume (int8_t nivel_vol);							//função de atuar apenas no volume
+    void TDA7317 (uint8_t endereco, uint8_t comando);		//função avançada para enviar bytes ao CircuitoIntegrado
 };
 
 extern Breeze Breeze;							
